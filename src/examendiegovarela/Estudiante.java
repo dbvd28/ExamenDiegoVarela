@@ -6,6 +6,8 @@
 package examendiegovarela;
 
 import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -50,5 +52,5 @@ public class Estudiante extends Alumnos{
     public String toString() {
         return "Estudiante{" + "conocimiento=" + conocimiento + ", aprendizaje=" + aprendizaje + ", examenes=" + examenes + '}';
     }
-    
+     
 }
