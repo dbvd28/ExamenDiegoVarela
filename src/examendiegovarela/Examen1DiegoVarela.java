@@ -41,6 +41,20 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jt_aprendizaje = new javax.swing.JTextField();
         jb_guardarestudiante = new javax.swing.JButton();
+        sesiontutor = new javax.swing.JFrame();
+        Iniciarsesiontutor = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jt_usuario2 = new javax.swing.JTextField();
+        jt_contraseña2 = new javax.swing.JTextField();
+        sesionestudiante = new javax.swing.JFrame();
+        Iniciarsesionestu = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jt_usuario3 = new javax.swing.JTextField();
+        jt_contraseña3 = new javax.swing.JTextField();
+        ventanatutor = new javax.swing.JFrame();
+        ventanaestudiante = new javax.swing.JFrame();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -61,6 +75,9 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jb_iniciartutor = new javax.swing.JButton();
+        jb_inicarestudiante = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
         jLabel9.setText("Agregar clases:");
@@ -150,6 +167,117 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(jb_guardarestudiante)
                 .addContainerGap(190, Short.MAX_VALUE))
+        );
+
+        Iniciarsesiontutor.setText("Iniciar sesion");
+
+        jLabel12.setText("Usuario: ");
+
+        jLabel13.setText("Contraseña: ");
+
+        javax.swing.GroupLayout sesiontutorLayout = new javax.swing.GroupLayout(sesiontutor.getContentPane());
+        sesiontutor.getContentPane().setLayout(sesiontutorLayout);
+        sesiontutorLayout.setHorizontalGroup(
+            sesiontutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sesiontutorLayout.createSequentialGroup()
+                .addGroup(sesiontutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sesiontutorLayout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(Iniciarsesiontutor))
+                    .addGroup(sesiontutorLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(sesiontutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel12))
+                        .addGap(18, 18, 18)
+                        .addGroup(sesiontutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jt_usuario2)
+                            .addComponent(jt_contraseña2, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE))))
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+        sesiontutorLayout.setVerticalGroup(
+            sesiontutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sesiontutorLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addGroup(sesiontutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jt_usuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(sesiontutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jt_contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(Iniciarsesiontutor)
+                .addGap(103, 103, 103))
+        );
+
+        Iniciarsesionestu.setText("Iniciar sesion");
+        Iniciarsesionestu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IniciarsesionestuMouseClicked(evt);
+            }
+        });
+
+        jLabel14.setText("Usuario: ");
+
+        jLabel15.setText("Contraseña: ");
+
+        javax.swing.GroupLayout sesionestudianteLayout = new javax.swing.GroupLayout(sesionestudiante.getContentPane());
+        sesionestudiante.getContentPane().setLayout(sesionestudianteLayout);
+        sesionestudianteLayout.setHorizontalGroup(
+            sesionestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sesionestudianteLayout.createSequentialGroup()
+                .addGroup(sesionestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sesionestudianteLayout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(Iniciarsesionestu))
+                    .addGroup(sesionestudianteLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(sesionestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14))
+                        .addGap(18, 18, 18)
+                        .addGroup(sesionestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jt_usuario3)
+                            .addComponent(jt_contraseña3, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE))))
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+        sesionestudianteLayout.setVerticalGroup(
+            sesionestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sesionestudianteLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addGroup(sesionestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jt_usuario3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(sesionestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jt_contraseña3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(Iniciarsesionestu)
+                .addGap(103, 103, 103))
+        );
+
+        javax.swing.GroupLayout ventanatutorLayout = new javax.swing.GroupLayout(ventanatutor.getContentPane());
+        ventanatutor.getContentPane().setLayout(ventanatutorLayout);
+        ventanatutorLayout.setHorizontalGroup(
+            ventanatutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        ventanatutorLayout.setVerticalGroup(
+            ventanatutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout ventanaestudianteLayout = new javax.swing.GroupLayout(ventanaestudiante.getContentPane());
+        ventanaestudiante.getContentPane().setLayout(ventanaestudianteLayout);
+        ventanaestudianteLayout.setHorizontalGroup(
+            ventanaestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        ventanaestudianteLayout.setVerticalGroup(
+            ventanaestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -285,15 +413,47 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear cuenta", jPanel1);
 
+        jLabel11.setText("Ingresar como:");
+
+        jb_iniciartutor.setText("Tutor");
+        jb_iniciartutor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_iniciartutorMouseClicked(evt);
+            }
+        });
+
+        jb_inicarestudiante.setText("Estudiante");
+        jb_inicarestudiante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_inicarestudianteMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 509, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(197, 197, 197)
+                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(96, 96, 96)
+                .addComponent(jb_iniciartutor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                .addComponent(jb_inicarestudiante)
+                .addGap(117, 117, 117))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 311, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_iniciartutor)
+                    .addComponent(jb_inicarestudiante))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Login", jPanel2);
@@ -426,6 +586,40 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_guardarestudianteActionPerformed
 
+    private void jb_iniciartutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_iniciartutorMouseClicked
+        // TODO add your handling code here:
+        sesiontutor.pack();
+        sesiontutor.setVisible(true);
+    }//GEN-LAST:event_jb_iniciartutorMouseClicked
+
+    private void jb_inicarestudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_inicarestudianteMouseClicked
+        // TODO add your handling code here:
+        this.sesionestudiante.pack();
+        sesionestudiante.setVisible(true);
+    }//GEN-LAST:event_jb_inicarestudianteMouseClicked
+
+    private void IniciarsesionestuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarsesionestuMouseClicked
+        // TODO add your handling code here:
+        String usuario, contraseña;
+        try {
+            usuario = jt_usuario3.getText();
+            contraseña = jt_contraseña3.getText();
+            for (Alumnos alumnos : lista) {
+                if (alumnos instanceof Tutores) {
+                    if (usuario == ((Tutores) alumnos).getUsuario() && contraseña == ((Tutores) alumnos).getContraseña()) {
+                        this.ventanatutor.pack();
+                        ventanatutor.setVisible(true);
+                    }else{
+                    JOptionPane.showMessageDialog(null,"El usuario o cjontraseña no existe en tutor");
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Ocurrio un problema consulte al administrador");
+        }
+    }//GEN-LAST:event_IniciarsesionestuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -463,10 +657,17 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame Estudiante;
+    private javax.swing.JButton Iniciarsesionestu;
+    private javax.swing.JButton Iniciarsesiontutor;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -481,17 +682,27 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton jb_clase;
     private javax.swing.JButton jb_guardarestudiante;
+    private javax.swing.JButton jb_inicarestudiante;
+    private javax.swing.JButton jb_iniciartutor;
     private javax.swing.JButton jb_salir;
     private javax.swing.JTextField jt_aprendizaje;
     private javax.swing.JTextField jt_carrera;
     private javax.swing.JTextField jt_clase;
     private javax.swing.JTextField jt_contraseña;
+    private javax.swing.JTextField jt_contraseña2;
+    private javax.swing.JTextField jt_contraseña3;
     private javax.swing.JTextField jt_edad;
     private javax.swing.JTextField jt_lugar;
     private javax.swing.JTextField jt_nombre;
     private javax.swing.JTextField jt_numero;
     private javax.swing.JTextField jt_usuario;
+    private javax.swing.JTextField jt_usuario2;
+    private javax.swing.JTextField jt_usuario3;
+    private javax.swing.JFrame sesionestudiante;
+    private javax.swing.JFrame sesiontutor;
     private javax.swing.JFrame tutor;
+    private javax.swing.JFrame ventanaestudiante;
+    private javax.swing.JFrame ventanatutor;
     // End of variables declaration//GEN-END:variables
 ArrayList<Alumnos> lista = new ArrayList();
 }
