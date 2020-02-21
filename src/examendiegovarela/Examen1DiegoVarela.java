@@ -37,6 +37,10 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jb_clase = new javax.swing.JButton();
         jb_salir = new javax.swing.JButton();
         jt_clase = new javax.swing.JTextField();
+        Estudiante = new javax.swing.JFrame();
+        jLabel10 = new javax.swing.JLabel();
+        jt_aprendizaje = new javax.swing.JTextField();
+        jb_guardarestudiante = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -104,6 +108,48 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
                     .addComponent(jb_clase)
                     .addComponent(jb_salir))
                 .addContainerGap(148, Short.MAX_VALUE))
+        );
+
+        jLabel10.setText("Nivel de aprendizaje:");
+
+        jb_guardarestudiante.setText("Guardar");
+        jb_guardarestudiante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_guardarestudianteMouseClicked(evt);
+            }
+        });
+        jb_guardarestudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_guardarestudianteActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout EstudianteLayout = new javax.swing.GroupLayout(Estudiante.getContentPane());
+        Estudiante.getContentPane().setLayout(EstudianteLayout);
+        EstudianteLayout.setHorizontalGroup(
+            EstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EstudianteLayout.createSequentialGroup()
+                .addGroup(EstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EstudianteLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jt_aprendizaje, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(EstudianteLayout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jb_guardarestudiante)))
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+        EstudianteLayout.setVerticalGroup(
+            EstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EstudianteLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(EstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jt_aprendizaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(jb_guardarestudiante)
+                .addContainerGap(190, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -278,7 +324,7 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
@@ -345,6 +391,41 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         tutor.setVisible(false);
     }//GEN-LAST:event_jb_salirMouseClicked
 
+    private void jb_guardarestudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardarestudianteMouseClicked
+        // TODO add your handling code here:
+        String nombre, carrera, lugar, usuario, contraseña;
+        int edad, numero, aprendizaje;
+        try {
+            nombre = jt_nombre.getText();
+            carrera = jt_carrera.getText();
+            lugar = jt_lugar.getText();
+            edad = Integer.parseInt(jt_edad.getText());
+            numero = Integer.parseInt(jt_numero.getText());
+            usuario = jt_nombre.getText();
+            contraseña = jt_nombre.getText();
+            aprendizaje = Integer.parseInt(jt_aprendizaje.getText());
+            Estudiante t = new Estudiante(0, aprendizaje, nombre, edad, carrera, usuario, numero, usuario, contraseña);
+            lista.add(t);
+            JOptionPane.showMessageDialog(null, "Alumno creado con exito");
+            jt_nombre.setText("");
+            jt_carrera.setText("");
+            jt_edad.setText("");
+            jt_contraseña.setText("");
+            jt_usuario.setText("");
+            jt_numero.setText("");
+            jt_lugar.setText("");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Hubo un error y no se guardaron los datos contacte al administrador");
+        }
+        this.tutor.pack();
+        tutor.setVisible(false);
+    }//GEN-LAST:event_jb_guardarestudianteMouseClicked
+
+    private void jb_guardarestudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_guardarestudianteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_guardarestudianteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -381,9 +462,11 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame Estudiante;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -397,7 +480,9 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton jb_clase;
+    private javax.swing.JButton jb_guardarestudiante;
     private javax.swing.JButton jb_salir;
+    private javax.swing.JTextField jt_aprendizaje;
     private javax.swing.JTextField jt_carrera;
     private javax.swing.JTextField jt_clase;
     private javax.swing.JTextField jt_contraseña;
