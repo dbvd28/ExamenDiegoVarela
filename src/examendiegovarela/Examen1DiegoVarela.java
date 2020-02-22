@@ -76,6 +76,7 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jt_usua = new javax.swing.JTextField();
         jt_contra = new javax.swing.JTextField();
         jt_gan = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         ventanaestudiante = new javax.swing.JFrame();
         jLabel17 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -98,6 +99,7 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jb_salir3 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -122,6 +124,15 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jb_iniciartutor = new javax.swing.JButton();
         jb_inicarestudiante = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jt_cla = new javax.swing.JTextField();
+        jt_cono = new javax.swing.JTextField();
+        jt_tema = new javax.swing.JTextField();
+        jt_puntaje = new javax.swing.JTextField();
+        jb_exam = new javax.swing.JButton();
 
         jLabel9.setText("Agregar clases:");
 
@@ -213,6 +224,11 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         );
 
         Iniciarsesiontutor.setText("Iniciar sesion");
+        Iniciarsesiontutor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IniciarsesiontutorMouseClicked(evt);
+            }
+        });
 
         jLabel12.setText("Usuario: ");
 
@@ -329,6 +345,11 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jb_tutoria.setText("Tutroia");
 
         jb_salir2.setText("salir");
+        jb_salir2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_salir2MouseClicked(evt);
+            }
+        });
 
         jLabel16.setText("Nombre:");
 
@@ -345,6 +366,8 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jLabel22.setText("Contraseña:");
 
         jLabel23.setText("Ganancias:");
+
+        jButton3.setText("Examen");
 
         javax.swing.GroupLayout ventanatutorLayout = new javax.swing.GroupLayout(ventanatutor.getContentPane());
         ventanatutor.getContentPane().setLayout(ventanatutorLayout);
@@ -397,7 +420,9 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
                         .addComponent(jb_modificar)
                         .addGap(45, 45, 45)
                         .addComponent(jb_tutoria)
-                        .addGap(40, 40, 40)
+                        .addGap(50, 50, 50)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jb_salir2))
                     .addGroup(ventanatutorLayout.createSequentialGroup()
                         .addContainerGap()
@@ -413,7 +438,8 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
                 .addGroup(ventanatutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_modificar)
                     .addComponent(jb_tutoria)
-                    .addComponent(jb_salir2))
+                    .addComponent(jb_salir2)
+                    .addComponent(jButton3))
                 .addGap(18, 18, 18)
                 .addGroup(ventanatutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ventanatutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -494,6 +520,11 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jLabel28.setText("Usuario:");
 
         jb_salir3.setText("salir");
+        jb_salir3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_salir3MouseClicked(evt);
+            }
+        });
 
         jLabel29.setText("Contraseña:");
 
@@ -602,6 +633,8 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        jLabel32.setText("jLabel32");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -781,15 +814,65 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Login", jPanel2);
 
+        jLabel30.setText("Clase:");
+
+        jLabel31.setText("Conocimiento requerido:");
+
+        jLabel33.setText("Tema:");
+
+        jLabel34.setText("Puntaje:");
+
+        jb_exam.setText("Crear examen");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 509, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jt_cono))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jt_cla))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel33)
+                        .addGap(18, 18, 18)
+                        .addComponent(jt_tema))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_exam)
+                            .addComponent(jt_puntaje, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 311, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(jt_cla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(jt_cono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(jt_tema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(jt_puntaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(jb_exam)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear examen", jPanel3);
@@ -947,8 +1030,8 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
             usuario = jt_usuario3.getText();
             contraseña = jt_contraseña3.getText();
             for (Alumnos alumnos : lista) {
-                if (alumnos instanceof Tutores) {
-                    if (usuario == ((Tutores) alumnos).getUsuario() && contraseña == ((Tutores) alumnos).getContraseña()) {
+                if (alumnos instanceof Estudiante) {
+                    if (usuario == ((Estudiante) alumnos).getUsuario() && contraseña == ((Estudiante) alumnos).getContraseña()) {
                         this.ventanatutor.pack();
                         ventanatutor.setVisible(true);
                     } else {
@@ -996,6 +1079,38 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_modificarestuMouseClicked
 
+    private void jb_salir3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salir3MouseClicked
+        // TODO add your handling code here:
+        ventanaestudiante.setVisible(false);
+    }//GEN-LAST:event_jb_salir3MouseClicked
+
+    private void jb_salir2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salir2MouseClicked
+        // TODO add your handling code here:
+        ventanatutor.setVisible(false);
+    }//GEN-LAST:event_jb_salir2MouseClicked
+
+    private void IniciarsesiontutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarsesiontutorMouseClicked
+        // TODO add your handling code here:
+         String usuario, contraseña;
+        try {
+            usuario = jt_usuario3.getText();
+            contraseña = jt_contraseña3.getText();
+            for (Alumnos alumnos : lista) {
+                if (alumnos instanceof Tutores) {
+                    if (usuario == ((Tutores) alumnos).getUsuario() && contraseña == ((Tutores) alumnos).getContraseña()) {
+                        this.ventanatutor.pack();
+                        ventanatutor.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "El usuario o cjontraseña no existe en tutor");
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Ocurrio un problema consulte al administrador");
+        }
+    }//GEN-LAST:event_IniciarsesiontutorMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1040,6 +1155,7 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JTable estudiantes;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1063,6 +1179,11 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1076,6 +1197,7 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton jb_clase;
+    private javax.swing.JButton jb_exam;
     private javax.swing.JButton jb_guardarestudiante;
     private javax.swing.JButton jb_inicarestudiante;
     private javax.swing.JButton jb_iniciartutor;
@@ -1091,7 +1213,9 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JTextField jt_carr;
     private javax.swing.JTextField jt_carr1;
     private javax.swing.JTextField jt_carrera;
+    private javax.swing.JTextField jt_cla;
     private javax.swing.JTextField jt_clase;
+    private javax.swing.JTextField jt_cono;
     private javax.swing.JTextField jt_contra;
     private javax.swing.JTextField jt_contra1;
     private javax.swing.JTextField jt_contraseña;
@@ -1110,6 +1234,8 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JTextField jt_nom1;
     private javax.swing.JTextField jt_nombre;
     private javax.swing.JTextField jt_numero;
+    private javax.swing.JTextField jt_puntaje;
+    private javax.swing.JTextField jt_tema;
     private javax.swing.JTextField jt_usua;
     private javax.swing.JTextField jt_usua1;
     private javax.swing.JTextField jt_usuario;

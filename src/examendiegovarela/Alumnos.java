@@ -91,5 +91,4 @@ public class Alumnos {
     public String toString() {
         return "Alumnos{" + "nombre=" + nombre + '}';
     }
-    
 }
