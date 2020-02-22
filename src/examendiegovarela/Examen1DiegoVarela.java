@@ -17,13 +17,15 @@ import javax.swing.table.DefaultTableModel;
  * @author diego
  */
 public class Examen1DiegoVarela extends javax.swing.JFrame {
-Random random=new Random();
+
+    Random random = new Random();
+
     /**
      * Creates new form Examen1DiegoVarela
      */
     public Examen1DiegoVarela() {
         initComponents();
-
+        
     }
 
     /**
@@ -101,6 +103,7 @@ Random random=new Random();
         jLabel28 = new javax.swing.JLabel();
         jb_salir3 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         Tutorias = new javax.swing.JFrame();
         jd_fecha = new com.toedter.calendar.JDateChooser();
         jLabel32 = new javax.swing.JLabel();
@@ -116,6 +119,11 @@ Random random=new Random();
         simulartuto = new javax.swing.JFrame();
         cb_sim = new javax.swing.JComboBox<>();
         jLabel39 = new javax.swing.JLabel();
+        Examen = new javax.swing.JFrame();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaexam = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -554,6 +562,13 @@ Random random=new Random();
 
         jLabel29.setText("Contraseña:");
 
+        jButton4.setText("Examen");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout ventanaestudianteLayout = new javax.swing.GroupLayout(ventanaestudiante.getContentPane());
         ventanaestudiante.getContentPane().setLayout(ventanaestudianteLayout);
         ventanaestudianteLayout.setHorizontalGroup(
@@ -605,7 +620,9 @@ Random random=new Random();
                         .addComponent(jb_modificarestu)
                         .addGap(45, 45, 45)
                         .addComponent(jb_tutoria1)
-                        .addGap(40, 40, 40)
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton4)
+                        .addGap(30, 30, 30)
                         .addComponent(jb_salir3))
                     .addGroup(ventanaestudianteLayout.createSequentialGroup()
                         .addContainerGap()
@@ -621,7 +638,8 @@ Random random=new Random();
                 .addGroup(ventanaestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_modificarestu)
                     .addComponent(jb_tutoria1)
-                    .addComponent(jb_salir3))
+                    .addComponent(jb_salir3)
+                    .addComponent(jButton4))
                 .addGap(18, 18, 18)
                 .addGroup(ventanaestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ventanaestudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -771,6 +789,62 @@ Random random=new Random();
                     .addComponent(cb_sim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel39))
                 .addContainerGap(189, Short.MAX_VALUE))
+        );
+
+        tablaexam.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Clase", "conocimiento", "Puntaje", "Tema"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tablaexam);
+
+        jButton5.setText("Hacer Examen");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jButton6.setText("Salir");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ExamenLayout = new javax.swing.GroupLayout(Examen.getContentPane());
+        Examen.getContentPane().setLayout(ExamenLayout);
+        ExamenLayout.setHorizontalGroup(
+            ExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ExamenLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jButton5)
+                .addGap(49, 49, 49)
+                .addComponent(jButton6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
+        );
+        ExamenLayout.setVerticalGroup(
+            ExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExamenLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(ExamenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
+                    .addComponent(jButton6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1093,7 +1167,7 @@ Random random=new Random();
             DefaultTableModel modelo = (DefaultTableModel) tutores.getModel();
             modelo.addRow(show);
             tutores.setModel(modelo);
-            DefaultComboBoxModel mo=(DefaultComboBoxModel) cb_tutor.getModel();
+            DefaultComboBoxModel mo = (DefaultComboBoxModel) cb_tutor.getModel();
             mo.addElement(t.getNombre());
             cb_tutor.setModel(mo);
             jt_nombre.setText("");
@@ -1143,7 +1217,7 @@ Random random=new Random();
             jt_usuario.setText("");
             jt_numero.setText("");
             jt_lugar.setText("");
-
+            
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Hubo un error y no se guardaron los datos contacte al administrador");
@@ -1203,7 +1277,7 @@ Random random=new Random();
             ((Tutores) model.getValueAt(tutores.getSelectedRow(), 6)).setContraseña(jt_contra.getText());
             ((Tutores) model.getValueAt(tutores.getSelectedRow(), 7)).setGanancias(Integer.parseInt(jt_gan.getText()));
             tutores.setModel(model);
-
+            
         }
     }//GEN-LAST:event_jb_modificarMouseClicked
 
@@ -1211,16 +1285,16 @@ Random random=new Random();
         // TODO add your handling code here:
         if (tutores.getSelectedRow() >= 0) {
             DefaultTableModel model = (DefaultTableModel) tutores.getModel();
-            ((Tutores) model.getValueAt(estudiantes.getSelectedRow(), 0)).setNombre(jt_nom1.getText());
-            ((Tutores) model.getValueAt(estudiantes.getSelectedRow(), 1)).setEdad(Integer.parseInt(jt_ed1.getText()));
-            ((Tutores) model.getValueAt(estudiantes.getSelectedRow(), 2)).setCarrera(jt_carr1.getText());
-            ((Tutores) model.getValueAt(estudiantes.getSelectedRow(), 3)).setNacimiento(jt_naci1.getText());
-            ((Tutores) model.getValueAt(estudiantes.getSelectedRow(), 4)).setNumcuenta(Integer.parseInt(jt_no1.getText()));
-            ((Tutores) model.getValueAt(estudiantes.getSelectedRow(), 5)).setUsuario(jt_usua1.getText());
-            ((Tutores) model.getValueAt(estudiantes.getSelectedRow(), 6)).setContraseña(jt_contra1.getText());
-            ((Tutores) model.getValueAt(estudiantes.getSelectedRow(), 7)).setGanancias(Integer.parseInt(jt_apre.getText()));
+            ((Estudiante) model.getValueAt(estudiantes.getSelectedRow(), 0)).setNombre(jt_nom1.getText());
+            ((Estudiante) model.getValueAt(estudiantes.getSelectedRow(), 1)).setEdad(Integer.parseInt(jt_ed1.getText()));
+            ((Estudiante) model.getValueAt(estudiantes.getSelectedRow(), 2)).setCarrera(jt_carr1.getText());
+            ((Estudiante) model.getValueAt(estudiantes.getSelectedRow(), 3)).setNacimiento(jt_naci1.getText());
+            ((Estudiante) model.getValueAt(estudiantes.getSelectedRow(), 4)).setNumcuenta(Integer.parseInt(jt_no1.getText()));
+            ((Estudiante) model.getValueAt(estudiantes.getSelectedRow(), 5)).setUsuario(jt_usua1.getText());
+            ((Estudiante) model.getValueAt(estudiantes.getSelectedRow(), 6)).setContraseña(jt_contra1.getText());
+            ((Estudiante) model.getValueAt(estudiantes.getSelectedRow(), 7)).setAprendizaje(Integer.parseInt(jt_apre.getText()));
             tutores.setModel(model);
-
+            
         }
     }//GEN-LAST:event_jb_modificarestuMouseClicked
 
@@ -1236,7 +1310,7 @@ Random random=new Random();
 
     private void IniciarsesiontutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarsesiontutorMouseClicked
         // TODO add your handling code here:
-         String usuario, contraseña;
+        String usuario, contraseña;
         try {
             usuario = jt_usuario3.getText();
             contraseña = jt_contraseña3.getText();
@@ -1258,19 +1332,28 @@ Random random=new Random();
 
     private void jb_examMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_examMouseClicked
         // TODO add your handling code here:
-        String clase,tema;
-        int conocimiento,puntaje;
+        String clase, tema;
+        int conocimiento, puntaje;
         try {
-            clase=jt_clase.getText();
-            conocimiento=Integer.parseInt(jt_cono.getText());
-            tema=jt_tema.getText();
-            puntaje=Integer.parseInt(jt_puntaje.getText());
-           Examenes e=new Examenes(clase, conocimiento, puntaje, tema);
+            clase = jt_clase.getText();
+            conocimiento = Integer.parseInt(jt_cono.getText());
+            tema = jt_tema.getText();
+            puntaje = Integer.parseInt(jt_puntaje.getText());
+            Examenes e = new Examenes(clase, conocimiento, puntaje, tema);
             for (Alumnos alumnos : lista) {
-                if(alumnos instanceof Estudiante){
-                ((Estudiante) alumnos).getExamenespen().add(e);
+                if (alumnos instanceof Estudiante) {
+                    ((Estudiante) alumnos).getExamenespen().add(e);
                 }
             }
+            Object[] show = {
+                e.getClase(),
+                e.getConocimiento(),
+                e.getPuntaje(),
+                e.getTema()
+            };
+            DefaultTableModel modelo = (DefaultTableModel) tablaexam.getModel();
+            modelo.addRow(show);
+            tablaexam.setModel(modelo);
             jt_clase.setText("");
             jt_cono.setText("");
             jt_tema.setText("");
@@ -1296,22 +1379,22 @@ Random random=new Random();
         String Tema;
         Tutores t;
         Date fecha;
-        int aula,hora;
+        int aula, hora;
         try {
-            Tema=jt_tema1.getText();
-            t=(Tutores)cb_tutor.getSelectedItem();
-            hora=Integer.parseInt(jt_hora.getText());
-            fecha=jd_fecha.getDate();
+            Tema = jt_tema1.getText();
+            t = (Tutores) cb_tutor.getSelectedItem();
+            hora = Integer.parseInt(jt_hora.getText());
+            fecha = jd_fecha.getDate();
             fecha.setHours(hora);
-            aula=Integer.parseInt(jt_aula.getText());
-            Tutoria tut=new Tutoria(hora, aula, fecha, Tema, t);
+            aula = Integer.parseInt(jt_aula.getText());
+            Tutoria tut = new Tutoria(hora, aula, fecha, Tema, t);
             lista2.add(tut);
             tut.getAl().add(new Estudiante());
-            DefaultComboBoxModel mo=(DefaultComboBoxModel)cb_sim.getModel();
+            DefaultComboBoxModel mo = (DefaultComboBoxModel) cb_sim.getModel();
             mo.addElement(tut);
             cb_sim.setModel(mo);
-            JOptionPane.showMessageDialog(null,"Tutoria crada con exito");
-                    
+            JOptionPane.showMessageDialog(null, "Tutoria crada con exito");
+            
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Ocurrio un problema al reservar la tutoria");
@@ -1321,19 +1404,43 @@ Random random=new Random();
 
     private void cb_simItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_simItemStateChanged
         // TODO add your handling code here:
-      try{
-        cb_sim.getSelectedItem();
-        for (int i = 0; i < ((Tutoria)cb_sim.getSelectedItem()).getAl().size(); i++) {
-            ((Estudiante)((Tutoria)cb_sim.getSelectedItem()).getAl().get(i)).setConocimiento(0+random.nextInt(99));
+        try {
+            for (int i = 0; i < ((Tutoria) cb_sim.getSelectedItem()).getAl().size(); i++) {
+                ((Estudiante) ((Tutoria) cb_sim.getSelectedItem()).getAl().get(i)).setConocimiento(0 + random.nextInt(99));
+            }
+            ((Tutoria) cb_sim.getSelectedItem()).getTutores().setGanancias(270);
+            cb_sim.removeItem(cb_sim.getSelectedItem());
+            JOptionPane.showMessageDialog(null, "Tutoria dada con exito");
+            simulartuto.setVisible(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Ocurrio un error con el tutor al parecer se durmio y no llego");
         }
-        ((Tutoria)cb_sim.getSelectedItem()).getTutores().setGanancias(270);
-        cb_sim.removeItem( cb_sim.getSelectedItem());
-        JOptionPane.showMessageDialog(null, "Tutoria dada con exito");
-      }catch(Exception e){
-      e.printStackTrace();
-          System.out.println("Ocurrio un error con el tutor al parecer se durmio y no llego");
-      }
     }//GEN-LAST:event_cb_simItemStateChanged
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        this.Examen.pack();
+        Examen.setVisible(true);
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        this.Examen.pack();
+        Examen.setVisible(false);
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        if (tablaexam.getSelectedRow() >= 0) {
+            if (((Examenes) tablaexam.getValueAt(tablaexam.getSelectedRow(), 0)).aprobado()) {
+                JOptionPane.showMessageDialog(null, "Aprobo");
+            } else {
+                JOptionPane.showMessageDialog(null, "Reprobo");
+            }
+            tablaexam.remove(tablaexam.getSelectedRow());
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1374,6 +1481,7 @@ Random random=new Random();
     private javax.swing.JLabel Edad;
     private javax.swing.JLabel Edad1;
     private javax.swing.JFrame Estudiante;
+    private javax.swing.JFrame Examen;
     private javax.swing.JButton Iniciarsesionestu;
     private javax.swing.JButton Iniciarsesiontutor;
     private javax.swing.JFrame Tutorias;
@@ -1383,6 +1491,9 @@ Random random=new Random();
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1427,6 +1538,7 @@ Random random=new Random();
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton jb_clase;
     private javax.swing.JButton jb_creartuto;
@@ -1481,11 +1593,12 @@ Random random=new Random();
     private javax.swing.JFrame sesionestudiante;
     private javax.swing.JFrame sesiontutor;
     private javax.swing.JFrame simulartuto;
+    private javax.swing.JTable tablaexam;
     private javax.swing.JFrame tutor;
     private javax.swing.JTable tutores;
     private javax.swing.JFrame ventanaestudiante;
     private javax.swing.JFrame ventanatutor;
     // End of variables declaration//GEN-END:variables
 ArrayList<Alumnos> lista = new ArrayList();
-ArrayList<Tutoria> lista2 = new ArrayList();
+    ArrayList<Tutoria> lista2 = new ArrayList();
 }
