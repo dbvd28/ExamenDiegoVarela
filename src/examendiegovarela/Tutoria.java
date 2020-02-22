@@ -17,8 +17,24 @@ public class Tutoria {
  private int aula;
 private Date fecha;
 private String tema;
-private String Tutores;
+private Tutores Tutores;
 private ArrayList<Alumnos> al=new ArrayList();
+
+    public Tutoria(int hora, int aula, Date fecha, String tema, Tutores Tutores) {
+        this.hora = hora;
+        this.aula = aula;
+        this.fecha = fecha;
+        this.tema = tema;
+        this.Tutores = Tutores;
+    }
+
+    public Tutores getTutores() {
+        return Tutores;
+    }
+
+    public void setTutores(Tutores Tutores) {
+        this.Tutores = Tutores;
+    }
 
     public int getHora() {
         return hora;
@@ -52,13 +68,6 @@ private ArrayList<Alumnos> al=new ArrayList();
         this.tema = tema;
     }
 
-    public String getTutores() {
-        return Tutores;
-    }
-
-    public void setTutores(String Tutores) {
-        this.Tutores = Tutores;
-    }
 
     public ArrayList<Alumnos> getAl() {
         return al;
@@ -68,14 +77,7 @@ private ArrayList<Alumnos> al=new ArrayList();
         this.al = al;
     }
 
-    public Tutoria(int hora, int aula, Date fecha, String tema, String Tutores) {
-        this.hora = hora;
-        this.aula = aula;
-        this.fecha = fecha;
-        this.tema = tema;
-        this.Tutores = Tutores;
-    }
-
+    
     @Override
     public String toString() {
         return "Tutoria{" + "fecha=" + fecha + '}';

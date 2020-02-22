@@ -16,12 +16,32 @@ import javax.swing.table.DefaultTableModel;
 public class Estudiante extends Alumnos{
     private int conocimiento;
     private int aprendizaje;
-    private ArrayList examenes=new ArrayList();
+    private ArrayList <Examenes>examenespen=new ArrayList();
+    private ArrayList <Examenes>examenesre=new ArrayList();
+
+    public Estudiante() {
+    }
 
     public Estudiante(int conocimiento, int aprendizaje, String nombre, int edad, String carrera, String nacimiento, int numcuenta, String usuario, String contraseña) {
         super(nombre, edad, carrera, nacimiento, numcuenta, usuario, contraseña);
         this.conocimiento = conocimiento;
         this.aprendizaje = aprendizaje;
+    }
+
+    public ArrayList<Examenes> getExamenespen() {
+        return examenespen;
+    }
+
+    public void setExamenespen(ArrayList<Examenes> examenespen) {
+        this.examenespen = examenespen;
+    }
+
+    public ArrayList<Examenes> getExamenesre() {
+        return examenesre;
+    }
+
+    public void setExamenesre(ArrayList<Examenes> examenesre) {
+        this.examenesre = examenesre;
     }
 
     public int getConocimiento() {
@@ -40,17 +60,12 @@ public class Estudiante extends Alumnos{
         this.aprendizaje = aprendizaje;
     }
 
-    public ArrayList getExamenes() {
-        return examenes;
-    }
-
-    public void setExamenes(ArrayList examenes) {
-        this.examenes = examenes;
-    }
-
     @Override
     public String toString() {
-        return "Estudiante{" + "conocimiento=" + conocimiento + ", aprendizaje=" + aprendizaje + ", examenes=" + examenes + '}';
+        return "Estudiante{" + "conocimiento=" + conocimiento + ", aprendizaje=" + aprendizaje + ", examenespen=" + examenespen + ", examenesre=" + examenesre + '}';
     }
+
+
+    
      
 }

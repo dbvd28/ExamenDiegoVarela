@@ -6,6 +6,8 @@
 package examendiegovarela;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -15,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  * @author diego
  */
 public class Examen1DiegoVarela extends javax.swing.JFrame {
-
+Random random=new Random();
     /**
      * Creates new form Examen1DiegoVarela
      */
@@ -99,7 +101,21 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jb_salir3 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
+        Tutorias = new javax.swing.JFrame();
+        jd_fecha = new com.toedter.calendar.JDateChooser();
         jLabel32 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jb_creartuto = new javax.swing.JButton();
+        jt_aula = new javax.swing.JTextField();
+        jt_tema1 = new javax.swing.JTextField();
+        jt_hora = new javax.swing.JTextField();
+        cb_tutor = new javax.swing.JComboBox<>();
+        jLabel38 = new javax.swing.JLabel();
+        simulartuto = new javax.swing.JFrame();
+        cb_sim = new javax.swing.JComboBox<>();
+        jLabel39 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -342,7 +358,7 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
             }
         });
 
-        jb_tutoria.setText("Tutroia");
+        jb_tutoria.setText("Tutoria");
 
         jb_salir2.setText("salir");
         jb_salir2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -515,7 +531,17 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
 
         jLabel27.setText("Numero de cuenta:");
 
-        jb_tutoria1.setText("Tutroia");
+        jb_tutoria1.setText("Tutoria");
+        jb_tutoria1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_tutoria1MouseClicked(evt);
+            }
+        });
+        jb_tutoria1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_tutoria1ActionPerformed(evt);
+            }
+        });
 
         jLabel28.setText("Usuario:");
 
@@ -634,7 +660,118 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel32.setText("jLabel32");
+        jLabel32.setText("Fecha:");
+
+        jLabel35.setText("Aula:");
+
+        jLabel36.setText("Tema :");
+
+        jLabel37.setText("Hora:");
+
+        jb_creartuto.setText("Crear");
+        jb_creartuto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_creartutoMouseClicked(evt);
+            }
+        });
+
+        jLabel38.setText("Tutor:");
+
+        javax.swing.GroupLayout TutoriasLayout = new javax.swing.GroupLayout(Tutorias.getContentPane());
+        Tutorias.getContentPane().setLayout(TutoriasLayout);
+        TutoriasLayout.setHorizontalGroup(
+            TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TutoriasLayout.createSequentialGroup()
+                .addGroup(TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(TutoriasLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel38)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cb_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, TutoriasLayout.createSequentialGroup()
+                            .addGap(43, 43, 43)
+                            .addGroup(TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(TutoriasLayout.createSequentialGroup()
+                                    .addComponent(jLabel37)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jt_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(TutoriasLayout.createSequentialGroup()
+                                    .addGroup(TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel32)
+                                        .addComponent(jLabel35))
+                                    .addGroup(TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(TutoriasLayout.createSequentialGroup()
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jd_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(TutoriasLayout.createSequentialGroup()
+                                            .addGap(2, 2, 2)
+                                            .addComponent(jt_aula, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(TutoriasLayout.createSequentialGroup()
+                                    .addComponent(jLabel36)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jt_tema1)))))
+                    .addGroup(TutoriasLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jb_creartuto)))
+                .addContainerGap(205, Short.MAX_VALUE))
+        );
+        TutoriasLayout.setVerticalGroup(
+            TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TutoriasLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel32)
+                    .addComponent(jd_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(jt_aula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(jt_tema1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel37)
+                    .addComponent(jt_hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(TutoriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_tutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel38))
+                .addGap(27, 27, 27)
+                .addComponent(jb_creartuto)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        cb_sim.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_simItemStateChanged(evt);
+            }
+        });
+
+        jLabel39.setText("Tutorias: ");
+
+        javax.swing.GroupLayout simulartutoLayout = new javax.swing.GroupLayout(simulartuto.getContentPane());
+        simulartuto.getContentPane().setLayout(simulartutoLayout);
+        simulartutoLayout.setHorizontalGroup(
+            simulartutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(simulartutoLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel39)
+                .addGap(18, 18, 18)
+                .addComponent(cb_sim, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(139, Short.MAX_VALUE))
+        );
+        simulartutoLayout.setVerticalGroup(
+            simulartutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(simulartutoLayout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addGroup(simulartutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_sim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39))
+                .addContainerGap(189, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -823,6 +960,11 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         jLabel34.setText("Puntaje:");
 
         jb_exam.setText("Crear examen");
+        jb_exam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_examMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -951,6 +1093,9 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
             DefaultTableModel modelo = (DefaultTableModel) tutores.getModel();
             modelo.addRow(show);
             tutores.setModel(modelo);
+            DefaultComboBoxModel mo=(DefaultComboBoxModel) cb_tutor.getModel();
+            mo.addElement(t.getNombre());
+            cb_tutor.setModel(mo);
             jt_nombre.setText("");
             jt_carrera.setText("");
             jt_edad.setText("");
@@ -1111,6 +1256,85 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_IniciarsesiontutorMouseClicked
 
+    private void jb_examMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_examMouseClicked
+        // TODO add your handling code here:
+        String clase,tema;
+        int conocimiento,puntaje;
+        try {
+            clase=jt_clase.getText();
+            conocimiento=Integer.parseInt(jt_cono.getText());
+            tema=jt_tema.getText();
+            puntaje=Integer.parseInt(jt_puntaje.getText());
+           Examenes e=new Examenes(clase, conocimiento, puntaje, tema);
+            for (Alumnos alumnos : lista) {
+                if(alumnos instanceof Estudiante){
+                ((Estudiante) alumnos).getExamenespen().add(e);
+                }
+            }
+            jt_clase.setText("");
+            jt_cono.setText("");
+            jt_tema.setText("");
+            jt_puntaje.setText("");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Ocurrio un error consultar al administrador examen no creado");
+        }
+    }//GEN-LAST:event_jb_examMouseClicked
+
+    private void jb_tutoria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_tutoria1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_tutoria1ActionPerformed
+
+    private void jb_tutoria1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_tutoria1MouseClicked
+        // TODO add your handling code here:
+        this.Tutorias.pack();
+        Tutorias.setVisible(true);
+    }//GEN-LAST:event_jb_tutoria1MouseClicked
+
+    private void jb_creartutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_creartutoMouseClicked
+        // TODO add your handling code here:
+        String Tema;
+        Tutores t;
+        Date fecha;
+        int aula,hora;
+        try {
+            Tema=jt_tema1.getText();
+            t=(Tutores)cb_tutor.getSelectedItem();
+            hora=Integer.parseInt(jt_hora.getText());
+            fecha=jd_fecha.getDate();
+            fecha.setHours(hora);
+            aula=Integer.parseInt(jt_aula.getText());
+            Tutoria tut=new Tutoria(hora, aula, fecha, Tema, t);
+            lista2.add(tut);
+            tut.getAl().add(new Estudiante());
+            DefaultComboBoxModel mo=(DefaultComboBoxModel)cb_sim.getModel();
+            mo.addElement(tut);
+            cb_sim.setModel(mo);
+            JOptionPane.showMessageDialog(null,"Tutoria crada con exito");
+                    
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Ocurrio un problema al reservar la tutoria");
+        }
+        
+    }//GEN-LAST:event_jb_creartutoMouseClicked
+
+    private void cb_simItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_simItemStateChanged
+        // TODO add your handling code here:
+      try{
+        cb_sim.getSelectedItem();
+        for (int i = 0; i < ((Tutoria)cb_sim.getSelectedItem()).getAl().size(); i++) {
+            ((Estudiante)((Tutoria)cb_sim.getSelectedItem()).getAl().get(i)).setConocimiento(0+random.nextInt(99));
+        }
+        ((Tutoria)cb_sim.getSelectedItem()).getTutores().setGanancias(270);
+        cb_sim.removeItem( cb_sim.getSelectedItem());
+        JOptionPane.showMessageDialog(null, "Tutoria dada con exito");
+      }catch(Exception e){
+      e.printStackTrace();
+          System.out.println("Ocurrio un error con el tutor al parecer se durmio y no llego");
+      }
+    }//GEN-LAST:event_cb_simItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -1152,6 +1376,9 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JFrame Estudiante;
     private javax.swing.JButton Iniciarsesionestu;
     private javax.swing.JButton Iniciarsesiontutor;
+    private javax.swing.JFrame Tutorias;
+    private javax.swing.JComboBox<String> cb_sim;
+    private javax.swing.JComboBox<String> cb_tutor;
     private javax.swing.JTable estudiantes;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1184,6 +1411,11 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1197,6 +1429,7 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton jb_clase;
+    private javax.swing.JButton jb_creartuto;
     private javax.swing.JButton jb_exam;
     private javax.swing.JButton jb_guardarestudiante;
     private javax.swing.JButton jb_inicarestudiante;
@@ -1208,8 +1441,10 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JButton jb_salir3;
     private javax.swing.JButton jb_tutoria;
     private javax.swing.JButton jb_tutoria1;
+    private com.toedter.calendar.JDateChooser jd_fecha;
     private javax.swing.JTextField jt_apre;
     private javax.swing.JTextField jt_aprendizaje;
+    private javax.swing.JTextField jt_aula;
     private javax.swing.JTextField jt_carr;
     private javax.swing.JTextField jt_carr1;
     private javax.swing.JTextField jt_carrera;
@@ -1225,6 +1460,7 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JTextField jt_ed1;
     private javax.swing.JTextField jt_edad;
     private javax.swing.JTextField jt_gan;
+    private javax.swing.JTextField jt_hora;
     private javax.swing.JTextField jt_lugar;
     private javax.swing.JTextField jt_naci;
     private javax.swing.JTextField jt_naci1;
@@ -1236,6 +1472,7 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JTextField jt_numero;
     private javax.swing.JTextField jt_puntaje;
     private javax.swing.JTextField jt_tema;
+    private javax.swing.JTextField jt_tema1;
     private javax.swing.JTextField jt_usua;
     private javax.swing.JTextField jt_usua1;
     private javax.swing.JTextField jt_usuario;
@@ -1243,10 +1480,12 @@ public class Examen1DiegoVarela extends javax.swing.JFrame {
     private javax.swing.JTextField jt_usuario3;
     private javax.swing.JFrame sesionestudiante;
     private javax.swing.JFrame sesiontutor;
+    private javax.swing.JFrame simulartuto;
     private javax.swing.JFrame tutor;
     private javax.swing.JTable tutores;
     private javax.swing.JFrame ventanaestudiante;
     private javax.swing.JFrame ventanatutor;
     // End of variables declaration//GEN-END:variables
 ArrayList<Alumnos> lista = new ArrayList();
+ArrayList<Tutoria> lista2 = new ArrayList();
 }
